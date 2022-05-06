@@ -15,10 +15,10 @@ namespace Techability.Systems
         void Start()
         {
             // 1. Get the object's position and store in starting point 
-            
+            startingPosition = gameObject.transform.position;
 
             // 2. Add Height to startingPosition.y to get the top point. 
-            
+            topPoint = startingPosition.y + height;
 
 
 
