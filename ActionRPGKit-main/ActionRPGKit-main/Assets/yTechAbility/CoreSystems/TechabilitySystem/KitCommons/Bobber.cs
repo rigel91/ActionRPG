@@ -15,10 +15,10 @@ namespace Techability.Systems
         void Start()
         {
             // 1. Get the object's position and store in starting point 
-            startingPosition = gameObject.transform.position;
+            //startingPosition = gameObject.transform.position;
 
             // 2. Add Height to startingPosition.y to get the top point. 
-            topPoint = startingPosition.y + height;
+            //topPoint = startingPosition.y + height;
 
 
 
@@ -33,7 +33,7 @@ namespace Techability.Systems
 
 
             // 1. Get the object's position and store in starting point 
-            startingPosition = transform.position;
+            startingPosition = gameObject.transform.position;
 
             // 2. Add Height to startingPosition.y to get the top point. 
             topPoint = startingPosition.y + height;
@@ -44,19 +44,35 @@ namespace Techability.Systems
         void Update()
         {
             // 1. Move the Object up or down depending on IsMovingup
+            //Vector3 position = gameObject.transform.position;
+            //if(isMovingUp)
+            //{
+            //    position.y += speed * Time.deltaTime;                
+            //}
+            //else
+            //{
+            //    position.y -= speed * Time.deltaTime;
+            //}
+            //gameObject.transform.position = position;
 
 
             // 2. Check if the object is above the top point 
             //    We're only checking against the y value of the postion
             //      If so, isMovingUp should be false
             //      optional: place the object at the top point. 
-
+            //if(gameObject.transform.position.y >= topPoint)
+            //{
+            //    isMovingUp = false;
+            //}
 
             // 3. Check if the object is below the starting point.
             //    We're only checking against the y value of the postion
             //      If so, isMovingUp should be true
             //      optional: place the obect at the starting point. 
-
+            //if(gameObject.transform.position.y <= startingPosition.y)
+            //{
+            //    isMovingUp = true;
+            //}
 
 
 
