@@ -56,26 +56,113 @@ namespace Techability.Systems
 
         bool IsClose()
         {
-                     
+            //is the ghost close enough to the pillar
+            
+            if(GetDistanceTo(currentPathPoint) <= withInRange)
+            {
+                return true;
+            }
             return false;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // Option 1: If statement
+            // use GetDistanceTo function here check it's result against withInRange
+            //if (GetDistanceTo(currentPathPoint) <= withInRange)
+            //{
+            //    return true;
+            //}
+
+            //// starting stub code
+            //return false;
+
+            // Option 2: single line retrurn
+            // return (GetDistanceTo(currentPathPoint) <= withInRange);
         }
 
         float GetDistanceTo(Transform other)
         {
-           
-            return 0;
+            //distance from one position to another
+            Vector3 distance = other.position - gameObject.transform.position;
+            return distance.magnitude;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // Option 1
+            // Vector3 distance = other.position - gameObject.transform.position;
+            // return distance.magnitude; 
+
+            // Option 2
+            //return (other.position - gameObject.transform.position).magnitude;
+
+
+            // starting stub code
+            //return 0;
         }
 
         Vector3 GetDirectionTo(Transform other)
         {
-          
+            //get direction from one pillar to another
+            Vector3 distance = other.position - gameObject.transform.position;
+            return distance.normalized;
 
-            return Vector3.zero;
+
+
+
+
+
+
+
+
+
+
+
+
+            // Option 1
+            // Vector3 distance = other.position - gameObject.transform.position;
+            // return distance.normalized; 
+
+            // Option 2
+            //return (other.position - gameObject.transform.position).normalized;
+
+            // starting stub code
+            //return 0;
         }
 
         void NextPathPoint()
         {
-           
+            //go to the next point in our path
+
+            pathIndex++;
+            if (pathIndex >= pathList.Length)
+            {
+                pathIndex = 0;
+            }
+            currentPathPoint = pathList[pathIndex];
         }
     }
 }
