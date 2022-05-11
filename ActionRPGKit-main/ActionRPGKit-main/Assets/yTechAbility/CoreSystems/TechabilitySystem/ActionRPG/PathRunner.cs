@@ -27,7 +27,6 @@ namespace Techability.Systems
         // Update is called once per frame
         void Update()
         {
-           
             if (hasDynamicFacing)
             {
                 currentDirection = GetDirectionTo(currentPathPoint);
@@ -57,17 +56,11 @@ namespace Techability.Systems
         bool IsClose()
         {
             //is the ghost close enough to the pillar
-            
             if(GetDistanceTo(currentPathPoint) <= withInRange)
             {
                 return true;
             }
             return false;
-
-
-
-
-
 
 
 
@@ -94,11 +87,10 @@ namespace Techability.Systems
         float GetDistanceTo(Transform other)
         {
             //distance from one position to another
+
+
             Vector3 distance = other.position - gameObject.transform.position;
             return distance.magnitude;
-
-
-
 
 
 
