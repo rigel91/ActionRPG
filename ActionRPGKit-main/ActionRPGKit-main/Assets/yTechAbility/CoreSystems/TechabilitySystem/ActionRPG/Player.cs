@@ -35,12 +35,48 @@ namespace Techability.Systems
 
         void Update()
         {
-            // 1. Update The Mouse to World script with the current Mouse. 
-           
-            // 2. Get Mouse down, when down tell agent to move to MTW.WorldPosition
-           
-            // 3. Walking Animation Control 
+            // 1. Update The Mouse to World script with the current Mouse.
+
+
+
+
+
+
+
+
+
+            // 1. Update The Mouse to World script with the current Mouse.
+            MTW.UpdateMouse(Input.mousePosition);
             
+            // 2. Get Mouse down, when down tell agent to move to MTW.WorldPosition
+
+
+
+
+
+
+
+
+            // 2. Get Mouse down, when down tell agent to move to MTW.WorldPosition
+            if(Input.GetMouseButtonDown(0))
+            {
+                agent.SetDestination(MTW.worldPosition);
+            }
+
+            // 3. Walking Animation Control 
+
+
+            // 3. Walking Animation Control 
+            if(agent.velocity.magnitude > .1f)
+            {
+                ani.SetFloat("Speed", 0.5f);
+            }
+            else
+            {
+                ani.SetFloat("Speed", 0.0f);
+                UpdateFacing();
+            }
+
         }
         void UpdateFacing()
         {
